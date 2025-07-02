@@ -1,0 +1,37 @@
+{
+  "taskId": "MTS-03",
+  "taskGoal": "Развить навык 'Meta tags, SEO, etc' до продвинутый уровень",
+  "develops": [
+    {
+      "skillName": "Meta tags, SEO, etc",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Внедрение на проекте",
+      "description": "Внедрить или адаптировать использование навыка 'Meta tags, SEO, etc' на проекте"
+    },
+    {
+      "title": "Обучение других",
+      "description": "Подготовить материалы и провести обучение коллег по навыку 'Meta tags, SEO, etc'"
+    },
+    {
+      "title": "Создание процесса",
+      "description": "Разработать процесс или методологию применения навыка 'Meta tags, SEO, etc'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Meta tags, SEO, etc",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Meta tags, SEO, etc",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Meta tags, SEO, etc' на продвинутый уровень",
+  "estimatedTime": "24 часов"
+}

@@ -1,0 +1,32 @@
+{
+  "taskId": "SEC-02",
+  "taskGoal": "Развить хорошее понимание теории и методов тестирования безопасности",
+  "develops": [
+    {
+      "skillName": "Тестирование безопасности",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение методов тестирования безопасности",
+      "description": "Изучить различные методы тестирования безопасности: статический анализ, динамическое тестирование, penetration testing"
+    },
+    {
+      "title": "Практическое применение инструментов",
+      "description": "Освоить базовые инструменты тестирования безопасности: OWASP ZAP, Burp Suite (Community), Nmap"
+    },
+    {
+      "title": "Анализ влияния на тестирование",
+      "description": "Понять как тестирование безопасности влияет на общие подходы к тестированию приложения"
+    }
+  ],
+  "artifacts": [
+    { "name": "OWASP Testing Guide", "url": "https://owasp.org/www-project-web-security-testing-guide/" },
+    { "name": "OWASP ZAP", "url": "https://www.zaproxy.org/" },
+    { "name": "PortSwigger Academy", "url": "https://portswigger.net/web-security" }
+  ],
+  "expectedResult": "Знание методов тестирования безопасности, умение использовать базовые инструменты, понимание влияния на процесс тестирования",
+  "estimatedTime": "20 часов"
+} 

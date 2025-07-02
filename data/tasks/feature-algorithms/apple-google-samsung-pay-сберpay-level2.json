@@ -1,0 +1,37 @@
+{
+  "taskId": "AP-02",
+  "taskGoal": "Развить навык 'Apple/Google/Samsung Pay/СберPay' до средний уровень",
+  "develops": [
+    {
+      "skillName": "Apple/Google/Samsung Pay/СберPay",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Углубленное изучение",
+      "description": "Изучить продвинутые аспекты навыка 'Apple/Google/Samsung Pay/СберPay', разобрать сложные случаи"
+    },
+    {
+      "title": "Практическое применение в проекте",
+      "description": "Применить навык 'Apple/Google/Samsung Pay/СберPay' в реальном проекте или сложном сценарии"
+    },
+    {
+      "title": "Анализ и оптимизация",
+      "description": "Проанализировать эффективность применения навыка и предложить улучшения"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Apple/Google/Samsung Pay/СберPay",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Apple/Google/Samsung Pay/СберPay",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Apple/Google/Samsung Pay/СберPay' на средний уровень",
+  "estimatedTime": "16 часов"
+}

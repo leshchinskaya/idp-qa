@@ -1,0 +1,37 @@
+{
+  "taskId": "GC-01",
+  "taskGoal": "Развить навык 'Gitlab CI' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "Gitlab CI",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: Gitlab CI",
+      "description": "Изучить теоретические основы навыка 'Gitlab CI', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'Gitlab CI'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Gitlab CI",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Gitlab CI",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Gitlab CI' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

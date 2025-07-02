@@ -1,0 +1,32 @@
+{
+  "taskId": "PERF-02",
+  "taskGoal": "Освоить продвинутые техники тестирования производительности",
+  "develops": [
+    {
+      "skillName": "Тестирование производительности",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Создание сложных сценариев",
+      "description": "Разработать комплексные тестовые сценарии с различными профилями нагрузки и пользовательскими путями."
+    },
+    {
+      "title": "Мониторинг системы",
+      "description": "Настроить мониторинг серверных ресурсов во время тестирования. Анализировать узкие места системы."
+    },
+    {
+      "title": "Оптимизация и рекомендации",
+      "description": "На основе результатов тестирования предложить конкретные рекомендации по улучшению производительности."
+    }
+  ],
+  "artifacts": [
+    { "name": "JMeter Advanced Guide", "url": "https://jmeter.apache.org/usermanual/index.html" },
+    { "name": "Performance Monitoring Tools", "url": "https://www.appdynamics.com/" },
+    { "name": "System Performance Tuning", "url": "https://www.brendangregg.com/systems-performance-2nd-edition-book.html" }
+  ],
+  "expectedResult": "Способность проводить комплексное тестирование производительности. Умение анализировать системные метрики. Навык подготовки рекомендаций по оптимизации.",
+  "estimatedTime": "20 часов"
+} 

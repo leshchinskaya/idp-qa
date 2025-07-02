@@ -1,0 +1,32 @@
+{
+  "taskId": "API-01",
+  "taskGoal": "Освоить основы тестирования API",
+  "develops": [
+    {
+      "skillName": "Работа с API инструментами",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение протоколов",
+      "description": "Изучить основы HTTP/HTTPS, методы запросов (GET, POST, PUT, DELETE), коды ответов, заголовки."
+    },
+    {
+      "title": "Работа с Postman",
+      "description": "Освоить создание коллекций, написание тестов, работу с переменными и окружениями в Postman."
+    },
+    {
+      "title": "Автоматизация API тестов",
+      "description": "Написать автоматизированные тесты для API с использованием Newman или другого инструмента."
+    }
+  ],
+  "artifacts": [
+    { "name": "Postman Learning Center", "url": "https://learning.postman.com/" },
+    { "name": "REST API Tutorial", "url": "https://restfulapi.net/" },
+    { "name": "Newman Documentation", "url": "https://learning.postman.com/docs/running-collections/using-newman-cli/" }
+  ],
+  "expectedResult": "Понимание принципов работы API. Умение создавать и выполнять API тесты в Postman. Навыки автоматизации API тестирования.",
+  "estimatedTime": "20 часов"
+} 

@@ -1,0 +1,32 @@
+{
+  "taskId": "MOB-01",
+  "taskGoal": "Освоить особенности мобильного тестирования",
+  "develops": [
+    {
+      "skillName": "Особенности мобильного тестирования",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение платформ",
+      "description": "Изучить особенности iOS и Android платформ, различия в поведении приложений."
+    },
+    {
+      "title": "Тестирование прерываний",
+      "description": "Освоить методы тестирования прерываний: звонки, SMS, уведомления, переключение приложений."
+    },
+    {
+      "title": "Работа с эмуляторами",
+      "description": "Настроить и использовать эмуляторы и симуляторы для тестирования на различных устройствах."
+    }
+  ],
+  "artifacts": [
+    { "name": "Android Testing Guide", "url": "https://developer.android.com/training/testing" },
+    { "name": "iOS Testing Guide", "url": "https://developer.apple.com/documentation/xctest" },
+    { "name": "Mobile Testing Best Practices", "url": "https://www.browserstack.com/guide/mobile-testing" }
+  ],
+  "expectedResult": "Понимание специфики мобильного тестирования. Умение тестировать прерывания и жизненный цикл приложения. Навыки работы с эмуляторами.",
+  "estimatedTime": "14 часов"
+} 

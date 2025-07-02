@@ -1,0 +1,37 @@
+{
+  "taskId": "СIS-01",
+  "taskGoal": "Развить навык 'Сертификация ISTQB Specialist' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "Сертификация ISTQB Specialist",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: Сертификация ISTQB Specialist",
+      "description": "Изучить теоретические основы навыка 'Сертификация ISTQB Specialist', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'Сертификация ISTQB Specialist'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Сертификация ISTQB Specialist",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Сертификация ISTQB Specialist",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Сертификация ISTQB Specialist' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

@@ -1,0 +1,32 @@
+{
+  "taskId": "REGR-01",
+  "taskGoal": "Освоить стратегии регрессионного тестирования",
+  "develops": [
+    {
+      "skillName": "Регрессионное тестирование",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение стратегий",
+      "description": "Изучить различные подходы к регрессионному тестированию: полное, выборочное, по приоритетам."
+    },
+    {
+      "title": "Анализ рисков",
+      "description": "Научиться анализировать изменения в коде и определять области для регрессионного тестирования."
+    },
+    {
+      "title": "Оптимизация набора тестов",
+      "description": "Создать стратегию поддержания и оптимизации регрессионного набора тестов."
+    }
+  ],
+  "artifacts": [
+    { "name": "Regression Testing Strategies", "url": "https://www.guru99.com/regression-testing.html" },
+    { "name": "Test Case Prioritization", "url": "https://www.softwaretestinghelp.com/test-case-prioritization/" },
+    { "name": "Risk-Based Testing", "url": "https://www.istqb.org/certifications/specialist" }
+  ],
+  "expectedResult": "Понимание различных стратегий регрессионного тестирования. Умение анализировать риски и приоритизировать тесты. Создание эффективной стратегии регрессии.",
+  "estimatedTime": "12 часов"
+} 

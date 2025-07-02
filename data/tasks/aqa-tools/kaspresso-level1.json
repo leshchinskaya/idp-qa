@@ -1,0 +1,37 @@
+{
+  "taskId": "K-01",
+  "taskGoal": "Развить навык 'Kaspresso' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "Kaspresso",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: Kaspresso",
+      "description": "Изучить теоретические основы навыка 'Kaspresso', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'Kaspresso'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Kaspresso",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Kaspresso",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Kaspresso' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

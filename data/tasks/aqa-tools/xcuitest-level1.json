@@ -1,0 +1,37 @@
+{
+  "taskId": "X-01",
+  "taskGoal": "Развить навык 'XCUITest' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "XCUITest",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: XCUITest",
+      "description": "Изучить теоретические основы навыка 'XCUITest', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'XCUITest'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по XCUITest",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры XCUITest",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'XCUITest' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

@@ -1,0 +1,37 @@
+{
+  "taskId": "DL-02",
+  "taskGoal": "Развить навык 'Dynamic/Deep links' до средний уровень",
+  "develops": [
+    {
+      "skillName": "Dynamic/Deep links",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Углубленное изучение",
+      "description": "Изучить продвинутые аспекты навыка 'Dynamic/Deep links', разобрать сложные случаи"
+    },
+    {
+      "title": "Практическое применение в проекте",
+      "description": "Применить навык 'Dynamic/Deep links' в реальном проекте или сложном сценарии"
+    },
+    {
+      "title": "Анализ и оптимизация",
+      "description": "Проанализировать эффективность применения навыка и предложить улучшения"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Dynamic/Deep links",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Dynamic/Deep links",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Dynamic/Deep links' на средний уровень",
+  "estimatedTime": "16 часов"
+}

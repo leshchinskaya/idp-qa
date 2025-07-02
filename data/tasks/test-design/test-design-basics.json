@@ -1,0 +1,32 @@
+{
+  "taskId": "DESIGN-01",
+  "taskGoal": "Освоить техники тест-дизайна",
+  "develops": [
+    {
+      "skillName": "Техники тест-дизайна",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение базовых техник",
+      "description": "Освоить классы эквивалентности, граничные значения, pairwise testing, переходы и состояния."
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить каждую технику на практических примерах, создать наборы тест-кейсов."
+    },
+    {
+      "title": "Комбинирование техник",
+      "description": "Научиться комбинировать различные техники для максимального покрытия при минимальном количестве тестов."
+    }
+  ],
+  "artifacts": [
+    { "name": "ISTQB Test Design Techniques", "url": "https://www.istqb.org/certifications/foundation-level" },
+    { "name": "Pairwise Testing Tools", "url": "https://www.pairwise.org/" },
+    { "name": "State Transition Testing", "url": "https://www.guru99.com/state-transition-testing.html" }
+  ],
+  "expectedResult": "Уверенное применение основных техник тест-дизайна. Умение выбирать подходящие техники для разных ситуаций. Создание оптимальных наборов тестов.",
+  "estimatedTime": "15 часов"
+} 

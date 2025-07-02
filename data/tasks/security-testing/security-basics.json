@@ -1,0 +1,32 @@
+{
+  "taskId": "SEC-01",
+  "taskGoal": "Изучить основные виды уязвимостей веб-приложений",
+  "develops": [
+    {
+      "skillName": "Тестирование безопасности",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение OWASP Top 10",
+      "description": "Прочитать и законспектировать описание каждой уязвимости из списка OWASP Top 10 2021. Понять механизмы возникновения и методы эксплуатации."
+    },
+    {
+      "title": "Практическое задание",
+      "description": "Пройти несколько уроков на PortSwigger Web Security Academy по темам SQL Injection и XSS. Выполнить лабораторные работы."
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист для проверки основных уязвимостей безопасности в веб-приложениях."
+    }
+  ],
+  "artifacts": [
+    { "name": "OWASP Top 10", "url": "https://owasp.org/www-project-top-ten/" },
+    { "name": "PortSwigger Academy", "url": "https://portswigger.net/web-security" },
+    { "name": "OWASP Testing Guide", "url": "https://owasp.org/www-project-web-security-testing-guide/" }
+  ],
+  "expectedResult": "Сформировано четкое понимание 10 основных уязвимостей. Есть конспект с примерами. Пройдено не менее 5 практических заданий. Создан чек-лист для тестирования.",
+  "estimatedTime": "16 часов"
+} 

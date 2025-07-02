@@ -1,0 +1,37 @@
+{
+  "taskId": "GA-01",
+  "taskGoal": "Развить навык 'Github Actions' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "Github Actions",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: Github Actions",
+      "description": "Изучить теоретические основы навыка 'Github Actions', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'Github Actions'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Github Actions",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Github Actions",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Github Actions' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

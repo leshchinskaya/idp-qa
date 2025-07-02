@@ -1,0 +1,37 @@
+{
+  "taskId": "U-03",
+  "taskGoal": "Развить навык 'Use-cases' до продвинутый уровень",
+  "develops": [
+    {
+      "skillName": "Use-cases",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Внедрение на проекте",
+      "description": "Внедрить или адаптировать использование навыка 'Use-cases' на проекте"
+    },
+    {
+      "title": "Обучение других",
+      "description": "Подготовить материалы и провести обучение коллег по навыку 'Use-cases'"
+    },
+    {
+      "title": "Создание процесса",
+      "description": "Разработать процесс или методологию применения навыка 'Use-cases'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Use-cases",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Use-cases",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Use-cases' на продвинутый уровень",
+  "estimatedTime": "24 часов"
+}

@@ -1,0 +1,37 @@
+{
+  "taskId": "БWC-02",
+  "taskGoal": "Развить навык 'Браузер, WebView, CustomTabs/SafariInApp' до средний уровень",
+  "develops": [
+    {
+      "skillName": "Браузер, WebView, CustomTabs/SafariInApp",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Углубленное изучение",
+      "description": "Изучить продвинутые аспекты навыка 'Браузер, WebView, CustomTabs/SafariInApp', разобрать сложные случаи"
+    },
+    {
+      "title": "Практическое применение в проекте",
+      "description": "Применить навык 'Браузер, WebView, CustomTabs/SafariInApp' в реальном проекте или сложном сценарии"
+    },
+    {
+      "title": "Анализ и оптимизация",
+      "description": "Проанализировать эффективность применения навыка и предложить улучшения"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Браузер, WebView, CustomTabs/SafariInApp",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Браузер, WebView, CustomTabs/SafariInApp",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Браузер, WebView, CustomTabs/SafariInApp' на средний уровень",
+  "estimatedTime": "16 часов"
+}

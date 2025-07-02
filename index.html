@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Генератор Индивидуального Плана Развития</title>
+    <title>generate-idp-for-qa</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
     <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
@@ -13,73 +13,100 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>Генератор Индивидуального Плана Развития</h1>
+            <h1>Генератор индивидуального плана развития для QA</h1>
             <p class="subtitle">Создайте персонализированный план развития навыков</p>
         </header>
 
         <main class="main">
-            <!-- Загрузка файла с навыками -->
-            <section class="upload-section">
-                <h2>Загрузить файл с навыками</h2>
-                <div class="upload-area">
-                    <input type="file" id="uploadFile" accept=".csv" class="file-input">
-                    <label for="uploadFile" class="upload-label">
-                        <span class="upload-icon">📁</span>
-                        <span>Выберите CSV файл или перетащите сюда</span>
-                        <small>Формат: Навык,Целевой уровень</small>
-                    </label>
-                </div>
-                <div class="divider">
-                    <span>или</span>
+            <!-- Табы -->
+            <section class="tabs-section">
+                <div class="tabs-container">
+                    <button class="tab-button active" data-tab="skills">Выбор навыков</button>
+                    <button class="tab-button" data-tab="upload">Загрузка файла</button>
+                    <button class="tab-button" data-tab="idp">Мой ИПР</button>
                 </div>
             </section>
 
-            <!-- Поиск и выбор навыков -->
-            <section class="skills-section">
-                <h2>Выберите навыки для развития</h2>
-                
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Поиск навыков..." class="search-input">
-                    <button id="clearSearch" class="clear-btn">✕</button>
+            <!-- Содержимое табов -->
+            <div class="tab-content">
+                <!-- Таб 1: Поиск и выбор навыков -->
+                <div class="tab-panel active" id="skillsTab">
+                    <section class="skills-section">
+                        <h2>Выберите навыки для развития</h2>
+                        
+                        <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="Поиск навыков..." class="search-input">
+                            <button id="clearSearch" class="clear-btn">✕</button>
+                        </div>
+
+                        <div class="skills-container">
+                            <div class="skills-groups" id="skillsGroups">
+                                <!-- Группы навыков будут загружены динамически -->
+                            </div>
+                        </div>
+                    </section>
                 </div>
 
-                <div class="skills-container">
-                    <div class="skills-groups" id="skillsGroups">
-                        <!-- Группы навыков будут загружены динамически -->
-                    </div>
+                <!-- Таб 2: Загрузка файла с навыками -->
+                <div class="tab-panel" id="uploadTab">
+                    <section class="upload-section">
+                        <h2>Загрузить файл с навыками</h2>
+                        <div class="upload-row">
+                            <div class="template-actions">
+                                <button id="downloadTemplate" class="btn btn-secondary">
+                                    <span class="download-icon">⬇</span>
+                                    Скачать шаблон CSV
+                                </button>
+                                <small class="template-hint">Скачайте шаблон и заполните целевые уровни</small>
+                            </div>
+                            <div class="upload-area">
+                                <input type="file" id="uploadFile" accept=".csv" class="file-input">
+                                <label for="uploadFile" class="upload-label">
+                                    <span class="upload-icon">📁</span>
+                                    <span>Выберите CSV файл</span>
+                                    <small>Формат: Навык,Текущий уровень,Целевой уровень</small>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
 
-            <!-- Выбранные навыки -->
-            <section class="selected-skills-section">
-                <h2>Выбранные навыки</h2>
-                <div class="selected-skills" id="selectedSkills">
-                    <p class="empty-state">Навыки не выбраны</p>
-                </div>
-                <div class="actions">
-                    <button id="generateIDP" class="btn btn-primary" disabled>Сгенерировать ИПР</button>
-                    <button id="clearAll" class="btn btn-secondary">Очистить все</button>
-                </div>
-            </section>
+                <!-- Таб 3: Мой ИПР -->
+                <div class="tab-panel" id="idpTab">
+                    <!-- Выбранные навыки -->
+                    <section class="selected-skills-section">
+                        <h2>Выбранные навыки</h2>
+                        <div class="selected-skills" id="selectedSkills">
+                            <p class="empty-state">Навыки не выбраны</p>
+                        </div>
+                        <div class="actions">
+                            <button id="generateIDP" class="btn btn-primary" disabled>Сгенерировать ИПР</button>
+                            <button id="clearAll" class="btn btn-secondary">Очистить все</button>
+                        </div>
+                    </section>
 
-            <!-- Результат ИПР -->
-            <section class="idp-section" id="idpSection" style="display: none;">
-                <h2>Индивидуальный План Развития</h2>
-                <div class="idp-content" id="idpContent">
-                    <!-- ИПР будет сгенерирован динамически -->
+                    <!-- Результат ИПР -->
+                    <section class="idp-section" id="idpSection" style="display: none;">
+                        <h2>Индивидуальный План Развития</h2>
+                        <div class="idp-content" id="idpContent">
+                            <!-- ИПР будет сгенерирован динамически -->
+                        </div>
+                        <div class="export-actions">
+                            <!-- <button id="exportPDF" class="btn btn-primary">Скачать PDF</button> -->
+                            <button id="exportCSV" class="btn btn-secondary">Скачать CSV</button>
+                        </div>
+                    </section>
                 </div>
-                <div class="export-actions">
-                    <button id="exportPDF" class="btn btn-primary">Скачать PDF</button>
-                    <button id="exportCSV" class="btn btn-secondary">Скачать CSV</button>
-                </div>
-            </section>
+            </div>
+
+
         </main>
 
         <!-- Модальное окно для выбора уровня -->
         <div class="modal" id="levelModal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 id="modalTitle">Выберите целевой уровень</h3>
+                    <h3 id="modalTitle">Выберите текущий и целевой уровень</h3>
                     <button class="modal-close" id="modalClose">✕</button>
                 </div>
                 <div class="modal-body">
@@ -87,8 +114,21 @@
                         <h4 id="modalSkillName"></h4>
                         <p id="modalSkillGroup"></p>
                     </div>
-                    <div class="levels" id="modalLevels">
-                        <!-- Уровни будут загружены динамически -->
+                    
+                    <div class="level-selection-row">
+                        <div class="level-selection-section">
+                            <h4>Текущий уровень</h4>
+                            <div class="levels" id="modalCurrentLevels">
+                                <!-- Текущие уровни будут загружены динамически -->
+                            </div>
+                        </div>
+                        
+                        <div class="level-selection-section">
+                            <h4>Целевой уровень</h4>
+                            <div class="levels" id="modalTargetLevels">
+                                <!-- Целевые уровни будут загружены динамически -->
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

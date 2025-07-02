@@ -1,0 +1,37 @@
+{
+  "taskId": "X-03",
+  "taskGoal": "Развить навык 'XCUITest' до продвинутый уровень",
+  "develops": [
+    {
+      "skillName": "XCUITest",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Внедрение на проекте",
+      "description": "Внедрить или адаптировать использование навыка 'XCUITest' на проекте"
+    },
+    {
+      "title": "Обучение других",
+      "description": "Подготовить материалы и провести обучение коллег по навыку 'XCUITest'"
+    },
+    {
+      "title": "Создание процесса",
+      "description": "Разработать процесс или методологию применения навыка 'XCUITest'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по XCUITest",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры XCUITest",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'XCUITest' на продвинутый уровень",
+  "estimatedTime": "24 часов"
+}

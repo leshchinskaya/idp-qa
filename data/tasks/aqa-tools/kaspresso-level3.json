@@ -1,0 +1,37 @@
+{
+  "taskId": "K-03",
+  "taskGoal": "Развить навык 'Kaspresso' до продвинутый уровень",
+  "develops": [
+    {
+      "skillName": "Kaspresso",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Внедрение на проекте",
+      "description": "Внедрить или адаптировать использование навыка 'Kaspresso' на проекте"
+    },
+    {
+      "title": "Обучение других",
+      "description": "Подготовить материалы и провести обучение коллег по навыку 'Kaspresso'"
+    },
+    {
+      "title": "Создание процесса",
+      "description": "Разработать процесс или методологию применения навыка 'Kaspresso'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Kaspresso",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Kaspresso",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Kaspresso' на продвинутый уровень",
+  "estimatedTime": "24 часов"
+}

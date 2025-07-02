@@ -1,0 +1,37 @@
+{
+  "taskId": "СIS-03",
+  "taskGoal": "Развить навык 'Сертификация ISTQB Specialist' до продвинутый уровень",
+  "develops": [
+    {
+      "skillName": "Сертификация ISTQB Specialist",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Внедрение на проекте",
+      "description": "Внедрить или адаптировать использование навыка 'Сертификация ISTQB Specialist' на проекте"
+    },
+    {
+      "title": "Обучение других",
+      "description": "Подготовить материалы и провести обучение коллег по навыку 'Сертификация ISTQB Specialist'"
+    },
+    {
+      "title": "Создание процесса",
+      "description": "Разработать процесс или методологию применения навыка 'Сертификация ISTQB Specialist'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Сертификация ISTQB Specialist",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Сертификация ISTQB Specialist",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Сертификация ISTQB Specialist' на продвинутый уровень",
+  "estimatedTime": "24 часов"
+}

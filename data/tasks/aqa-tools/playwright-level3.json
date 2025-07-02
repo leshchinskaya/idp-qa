@@ -1,0 +1,37 @@
+{
+  "taskId": "P-03",
+  "taskGoal": "Развить навык 'Playwright' до продвинутый уровень",
+  "develops": [
+    {
+      "skillName": "Playwright",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Внедрение на проекте",
+      "description": "Внедрить или адаптировать использование навыка 'Playwright' на проекте"
+    },
+    {
+      "title": "Обучение других",
+      "description": "Подготовить материалы и провести обучение коллег по навыку 'Playwright'"
+    },
+    {
+      "title": "Создание процесса",
+      "description": "Разработать процесс или методологию применения навыка 'Playwright'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Playwright",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Playwright",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Playwright' на продвинутый уровень",
+  "estimatedTime": "24 часов"
+}

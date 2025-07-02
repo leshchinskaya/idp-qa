@@ -1,0 +1,32 @@
+{
+  "taskId": "PERF-01",
+  "taskGoal": "Изучить основы тестирования производительности",
+  "develops": [
+    {
+      "skillName": "Тестирование производительности",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Теоретическая подготовка",
+      "description": "Изучить виды тестирования производительности: нагрузочное, стрессовое, объемное, тестирование стабильности."
+    },
+    {
+      "title": "Знакомство с инструментами",
+      "description": "Освоить базовые функции JMeter или LoadRunner. Создать простые тестовые сценарии."
+    },
+    {
+      "title": "Анализ результатов",
+      "description": "Научиться интерпретировать графики и метрики производительности. Понять основные показатели."
+    }
+  ],
+  "artifacts": [
+    { "name": "Apache JMeter", "url": "https://jmeter.apache.org/" },
+    { "name": "LoadRunner Community", "url": "https://www.microfocus.com/en-us/products/loadrunner-community/overview" },
+    { "name": "Performance Testing Guide", "url": "https://www.guru99.com/performance-testing.html" }
+  ],
+  "expectedResult": "Понимание основных принципов тестирования производительности. Умение создавать простые тесты в JMeter. Навык анализа базовых метрик.",
+  "estimatedTime": "12 часов"
+} 

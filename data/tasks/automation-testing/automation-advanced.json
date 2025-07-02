@@ -1,0 +1,32 @@
+{
+  "taskId": "AUTO-02",
+  "taskGoal": "Развить навыки автоматизации тестирования",
+  "develops": [
+    {
+      "skillName": "Типы автоматизированного тестирования",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Продвинутые техники",
+      "description": "Освоить Page Object Model, Data-Driven Testing, параллельное выполнение тестов."
+    },
+    {
+      "title": "Интеграция с CI/CD",
+      "description": "Настроить запуск автоматизированных тестов в pipeline CI/CD."
+    },
+    {
+      "title": "Отчетность и аналитика",
+      "description": "Настроить генерацию отчетов о результатах тестирования, анализ метрик качества."
+    }
+  ],
+  "artifacts": [
+    { "name": "Page Object Model", "url": "https://selenium-python.readthedocs.io/page-objects.html" },
+    { "name": "Jenkins for Testing", "url": "https://www.jenkins.io/doc/book/using/using-jenkins-to-build-a-java-maven-project/" },
+    { "name": "Allure Reports", "url": "https://docs.qameta.io/allure/" }
+  ],
+  "expectedResult": "Применение продвинутых паттернов автоматизации. Интеграция тестов в процесс разработки. Настройка качественной отчетности.",
+  "estimatedTime": "22 часа"
+} 

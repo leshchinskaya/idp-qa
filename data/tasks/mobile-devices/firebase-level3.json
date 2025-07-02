@@ -1,0 +1,37 @@
+{
+  "taskId": "F-03",
+  "taskGoal": "Развить навык 'Firebase' до продвинутый уровень",
+  "develops": [
+    {
+      "skillName": "Firebase",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Внедрение на проекте",
+      "description": "Внедрить или адаптировать использование навыка 'Firebase' на проекте"
+    },
+    {
+      "title": "Обучение других",
+      "description": "Подготовить материалы и провести обучение коллег по навыку 'Firebase'"
+    },
+    {
+      "title": "Создание процесса",
+      "description": "Разработать процесс или методологию применения навыка 'Firebase'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Firebase",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Firebase",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Firebase' на продвинутый уровень",
+  "estimatedTime": "24 часов"
+}

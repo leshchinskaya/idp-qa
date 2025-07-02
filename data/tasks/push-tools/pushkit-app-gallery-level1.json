@@ -1,0 +1,37 @@
+{
+  "taskId": "PAG-01",
+  "taskGoal": "Развить навык 'PushKit App Gallery' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "PushKit App Gallery",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: PushKit App Gallery",
+      "description": "Изучить теоретические основы навыка 'PushKit App Gallery', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'PushKit App Gallery'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по PushKit App Gallery",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры PushKit App Gallery",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'PushKit App Gallery' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

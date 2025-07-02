@@ -1,0 +1,32 @@
+{
+  "taskId": "SEC-04",
+  "taskGoal": "Достичь глубоких знаний и получить сертификацию в области тестирования безопасности",
+  "develops": [
+    {
+      "skillName": "Тестирование безопасности",
+      "fromLevel": 3,
+      "toLevel": 4
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение продвинутых техник",
+      "description": "Освоить продвинутые техники тестирования безопасности: reverse engineering, binary analysis, advanced exploitation techniques"
+    },
+    {
+      "title": "Отслеживание трендов в безопасности",
+      "description": "Настроить систему отслеживания новых уязвимостей и трендов в сфере безопасности, изучать CVE, security advisories"
+    },
+    {
+      "title": "Получение сертификации",
+      "description": "Подготовиться и сдать профессиональную сертификацию в области безопасности (CEH, CISSP, OSCP или аналогичную)"
+    }
+  ],
+  "artifacts": [
+    { "name": "CVE Database", "url": "https://cve.mitre.org/" },
+    { "name": "SANS Institute", "url": "https://www.sans.org/" },
+    { "name": "Offensive Security", "url": "https://www.offensive-security.com/" }
+  ],
+  "expectedResult": "Глубокие знания продвинутых техник тестирования безопасности, система отслеживания трендов, профессиональная сертификация",
+  "estimatedTime": "80 часов"
+} 

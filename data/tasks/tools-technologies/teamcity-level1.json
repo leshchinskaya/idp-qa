@@ -1,0 +1,37 @@
+{
+  "taskId": "T-01",
+  "taskGoal": "Развить навык 'TeamCity' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "TeamCity",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: TeamCity",
+      "description": "Изучить теоретические основы навыка 'TeamCity', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'TeamCity'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по TeamCity",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры TeamCity",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'TeamCity' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

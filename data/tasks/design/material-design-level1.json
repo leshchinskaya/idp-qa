@@ -1,0 +1,37 @@
+{
+  "taskId": "MD-01",
+  "taskGoal": "Развить навык 'Material Design' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "Material Design",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: Material Design",
+      "description": "Изучить теоретические основы навыка 'Material Design', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'Material Design'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Material Design",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Material Design",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Material Design' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

@@ -1,0 +1,37 @@
+{
+  "taskId": "P-01",
+  "taskGoal": "Развить навык 'Proxyman' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "Proxyman",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: Proxyman",
+      "description": "Изучить теоретические основы навыка 'Proxyman', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'Proxyman'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Proxyman",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Proxyman",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Proxyman' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

@@ -1,0 +1,37 @@
+{
+  "taskId": "T-03",
+  "taskGoal": "Развить навык 'TestRail' до продвинутый уровень",
+  "develops": [
+    {
+      "skillName": "TestRail",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Внедрение на проекте",
+      "description": "Внедрить или адаптировать использование навыка 'TestRail' на проекте"
+    },
+    {
+      "title": "Обучение других",
+      "description": "Подготовить материалы и провести обучение коллег по навыку 'TestRail'"
+    },
+    {
+      "title": "Создание процесса",
+      "description": "Разработать процесс или методологию применения навыка 'TestRail'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по TestRail",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры TestRail",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'TestRail' на продвинутый уровень",
+  "estimatedTime": "24 часов"
+}

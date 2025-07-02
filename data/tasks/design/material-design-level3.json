@@ -1,0 +1,37 @@
+{
+  "taskId": "MD-03",
+  "taskGoal": "Развить навык 'Material Design' до продвинутый уровень",
+  "develops": [
+    {
+      "skillName": "Material Design",
+      "fromLevel": 2,
+      "toLevel": 3
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Внедрение на проекте",
+      "description": "Внедрить или адаптировать использование навыка 'Material Design' на проекте"
+    },
+    {
+      "title": "Обучение других",
+      "description": "Подготовить материалы и провести обучение коллег по навыку 'Material Design'"
+    },
+    {
+      "title": "Создание процесса",
+      "description": "Разработать процесс или методологию применения навыка 'Material Design'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Material Design",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Material Design",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Material Design' на продвинутый уровень",
+  "estimatedTime": "24 часов"
+}

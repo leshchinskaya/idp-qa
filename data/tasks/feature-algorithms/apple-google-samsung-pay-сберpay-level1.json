@@ -1,0 +1,37 @@
+{
+  "taskId": "AP-01",
+  "taskGoal": "Развить навык 'Apple/Google/Samsung Pay/СберPay' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "Apple/Google/Samsung Pay/СберPay",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: Apple/Google/Samsung Pay/СберPay",
+      "description": "Изучить теоретические основы навыка 'Apple/Google/Samsung Pay/СберPay', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'Apple/Google/Samsung Pay/СберPay'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Apple/Google/Samsung Pay/СберPay",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Apple/Google/Samsung Pay/СберPay",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Apple/Google/Samsung Pay/СберPay' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

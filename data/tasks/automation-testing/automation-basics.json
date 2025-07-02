@@ -1,0 +1,32 @@
+{
+  "taskId": "AUTO-01",
+  "taskGoal": "Изучить основы автоматизации тестирования",
+  "develops": [
+    {
+      "skillName": "Типы автоматизированного тестирования",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Теория автоматизации",
+      "description": "Изучить пирамиду тестирования, виды автоматизированных тестов, критерии выбора тестов для автоматизации."
+    },
+    {
+      "title": "Выбор инструментов",
+      "description": "Сравнить различные инструменты автоматизации, выбрать подходящий для конкретного проекта."
+    },
+    {
+      "title": "Создание первых тестов",
+      "description": "Написать простые автоматизированные тесты для веб-приложения или API."
+    }
+  ],
+  "artifacts": [
+    { "name": "Test Automation Pyramid", "url": "https://martinfowler.com/articles/practical-test-pyramid.html" },
+    { "name": "Selenium WebDriver", "url": "https://www.selenium.dev/documentation/" },
+    { "name": "Postman for API Testing", "url": "https://learning.postman.com/docs/writing-scripts/test-scripts/" }
+  ],
+  "expectedResult": "Понимание принципов автоматизации тестирования. Умение выбирать инструменты. Создание базовых автоматизированных тестов.",
+  "estimatedTime": "16 часов"
+} 

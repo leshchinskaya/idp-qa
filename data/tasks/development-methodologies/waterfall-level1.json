@@ -1,0 +1,37 @@
+{
+  "taskId": "W-01",
+  "taskGoal": "Развить навык 'Waterfall' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "Waterfall",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: Waterfall",
+      "description": "Изучить теоретические основы навыка 'Waterfall', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'Waterfall'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Waterfall",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Waterfall",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Waterfall' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

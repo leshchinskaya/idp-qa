@@ -1,0 +1,32 @@
+{
+  "taskId": "FUNC-01",
+  "taskGoal": "Углубить знания функционального тестирования",
+  "develops": [
+    {
+      "skillName": "Функциональное тестирование",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение техник тест-дизайна",
+      "description": "Освоить техники классов эквивалентности, граничных значений, таблиц принятия решений."
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить изученные техники для создания тест-кейсов для реального или учебного проекта."
+    },
+    {
+      "title": "Автоматизация простых тестов",
+      "description": "Создать автоматизированные тесты для основных функциональных сценариев."
+    }
+  ],
+  "artifacts": [
+    { "name": "ISTQB Syllabus", "url": "https://www.istqb.org/certifications/foundation-level" },
+    { "name": "Test Design Techniques", "url": "https://www.guru99.com/software-testing-techniques.html" },
+    { "name": "Selenium Documentation", "url": "https://selenium-python.readthedocs.io/" }
+  ],
+  "expectedResult": "Уверенное применение техник тест-дизайна. Создание качественных тест-кейсов. Базовые навыки автоматизации функциональных тестов.",
+  "estimatedTime": "18 часов"
+} 

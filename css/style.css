@@ -41,8 +41,8 @@ body {
 /* Заголовок */
 .header {
     text-align: center;
-    margin-bottom: 40px;
-    padding: 40px 0;
+    margin-bottom: 30px;
+    padding: 25px 0;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     border-radius: var(--border-radius-lg);
     color: white;
@@ -50,15 +50,102 @@ body {
 }
 
 .header h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     opacity: 0.9;
     font-weight: 300;
+}
+
+/* Табы */
+.tabs-section {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+
+.tabs-container {
+    display: flex;
+    background: var(--surface-color);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    overflow: hidden;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 16px 24px;
+    background: var(--background-color);
+    border: none;
+    border-right: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab-button:last-child {
+    border-right: none;
+}
+
+.tab-button:hover {
+    background: var(--surface-color);
+    color: var(--text-primary);
+}
+
+.tab-button.active {
+    background: var(--surface-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.tab-content {
+    background: var(--surface-color);
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.tab-panel section {
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+/* Специальные стили для таба ИПР */
+#idpTab section {
+    margin-bottom: 20px;
+}
+
+#idpTab section:last-child {
+    margin-bottom: 0;
 }
 
 /* Секции */
@@ -79,9 +166,15 @@ section h2 {
 }
 
 /* Загрузка файла */
+.upload-row {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
 .upload-area {
     position: relative;
-    margin-bottom: 20px;
+    flex: 1;
 }
 
 .file-input {
@@ -97,13 +190,15 @@ section h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 30px 15px;
     border: 2px dashed var(--border-color);
     border-radius: var(--border-radius);
     background: var(--background-color);
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
+    height: 100%;
+    min-height: 150px;
 }
 
 .upload-label:hover {
@@ -119,6 +214,34 @@ section h2 {
 .upload-label small {
     color: var(--text-secondary);
     margin-top: 5px;
+}
+
+/* Действия с шаблоном */
+.template-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    flex: 1;
+    min-height: auto;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.template-hint {
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.download-icon {
+    margin-right: 8px;
+    font-size: 1.1rem;
 }
 
 .divider {
@@ -303,8 +426,8 @@ section h2 {
 
 .selected-skill {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 15px;
     padding: 15px 20px;
     background: var(--background-color);
     border: 1px solid var(--border-color);
@@ -342,6 +465,37 @@ section h2 {
     margin-right: 10px;
 }
 
+.skill-levels-display {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.current-level {
+    background: var(--success-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.target-level {
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.level-arrow {
+    color: var(--text-secondary);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
 .remove-skill {
     background: var(--error-color);
     color: white;
@@ -351,6 +505,8 @@ section h2 {
     cursor: pointer;
     font-size: 0.9rem;
     transition: background-color 0.3s ease;
+    margin-left: auto;
+    flex-shrink: 0;
 }
 
 .remove-skill:hover {
@@ -593,9 +749,9 @@ section h2 {
 .modal-content {
     background: var(--surface-color);
     border-radius: var(--border-radius-lg);
-    max-width: 600px;
+    max-width: 900px;
     width: 90%;
-    max-height: 80vh;
+    max-height: 85vh;
     overflow-y: auto;
     box-shadow: var(--shadow-lg);
     position: relative;
@@ -649,6 +805,24 @@ section h2 {
     font-size: 0.9rem;
 }
 
+.level-selection-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.level-selection-section {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.level-selection-section h4 {
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
 .levels {
     display: grid;
     gap: 15px;
@@ -673,6 +847,16 @@ section h2 {
     background: rgba(59, 130, 246, 0.1);
 }
 
+.level-option.current-level.selected {
+    border-color: var(--success-color);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.level-option.target-level.selected {
+    border-color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.1);
+}
+
 .level-number {
     background: var(--primary-color);
     color: white;
@@ -685,6 +869,10 @@ section h2 {
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 10px;
+}
+
+.level-option.current-level.selected .level-number {
+    background: var(--success-color);
 }
 
 .level-description {
@@ -707,16 +895,21 @@ section h2 {
         padding: 15px;
     }
     
-    .header h1 {
-        font-size: 2rem;
+        .header h1 {
+        font-size: 1.5rem;
     }
-    
+
     .subtitle {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     section {
         padding: 20px;
+    }
+    
+    .tab-button {
+        padding: 12px 16px;
+        font-size: 0.9rem;
     }
     
     .actions {
@@ -729,7 +922,12 @@ section h2 {
     
     .modal-content {
         width: 95%;
-        margin: 20px;
+        max-width: 95%;
+    }
+    
+    .level-selection-row {
+        flex-direction: column;
+        gap: 20px;
     }
     
     .modal-footer {
@@ -743,11 +941,11 @@ section h2 {
 
 @media (max-width: 480px) {
     .header {
-        padding: 30px 20px;
+        padding: 20px 15px;
     }
     
     .header h1 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
     
     section {
@@ -757,15 +955,36 @@ section h2 {
     .upload-label {
         padding: 30px 15px;
     }
-    
+
+    .upload-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .template-actions {
+        padding: 15px;
+        margin-top: 0;
+        min-height: auto;
+    }
+
     .selected-skill {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
     
+    .selected-skill .skill-levels-display {
+        align-self: center;
+    }
+    
+    .selected-skill .remove-skill {
+        margin-left: 0;
+        align-self: center;
+    }
+    
     .skill-details {
         width: 100%;
+        text-align: center;
     }
     
     .task-card {

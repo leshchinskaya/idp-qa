@@ -1,0 +1,37 @@
+{
+  "taskId": "C-01",
+  "taskGoal": "Развить навык 'Confluence' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "Confluence",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: Confluence",
+      "description": "Изучить теоретические основы навыка 'Confluence', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'Confluence'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Confluence",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Confluence",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Confluence' на базовый уровень",
+  "estimatedTime": "8 часов"
+}
