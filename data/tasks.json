@@ -1,0 +1,322 @@
+[
+  {
+    "taskId": "SEC-01",
+    "taskGoal": "Изучить основные виды уязвимостей веб-приложений",
+    "develops": [
+      {
+        "skillName": "Тестирование безопасности",
+        "fromLevel": 1,
+        "toLevel": 2
+      }
+    ],
+    "subTasks": [
+      {
+        "title": "Изучение OWASP Top 10",
+        "description": "Прочитать и законспектировать описание каждой уязвимости из списка OWASP Top 10 2021. Понять механизмы возникновения и методы эксплуатации."
+      },
+      {
+        "title": "Практическое задание",
+        "description": "Пройти несколько уроков на PortSwigger Web Security Academy по темам SQL Injection и XSS. Выполнить лабораторные работы."
+      },
+      {
+        "title": "Создание чек-листа",
+        "description": "Составить чек-лист для проверки основных уязвимостей безопасности в веб-приложениях."
+      }
+    ],
+    "artifacts": [
+      { "name": "OWASP Top 10", "url": "https://owasp.org/www-project-top-ten/" },
+      { "name": "PortSwigger Academy", "url": "https://portswigger.net/web-security" },
+      { "name": "OWASP Testing Guide", "url": "https://owasp.org/www-project-web-security-testing-guide/" }
+    ],
+    "expectedResult": "Сформировано четкое понимание 10 основных уязвимостей. Есть конспект с примерами. Пройдено не менее 5 практических заданий. Создан чек-лист для тестирования.",
+    "estimatedTime": "16 часов"
+  },
+  {
+    "taskId": "SEC-02",
+    "taskGoal": "Освоить методы тестирования безопасности и их применение",
+    "develops": [
+      {
+        "skillName": "Тестирование безопасности",
+        "fromLevel": 2,
+        "toLevel": 3
+      }
+    ],
+    "subTasks": [
+      {
+        "title": "Изучение инструментов",
+        "description": "Освоить работу с Burp Suite, OWASP ZAP, и другими инструментами для тестирования безопасности."
+      },
+      {
+        "title": "Практическое применение",
+        "description": "Провести тестирование безопасности тестового веб-приложения, используя изученные методы и инструменты."
+      },
+      {
+        "title": "Документирование результатов",
+        "description": "Создать отчет по результатам тестирования с описанием найденных уязвимостей и рекомендациями по их устранению."
+      }
+    ],
+    "artifacts": [
+      { "name": "Burp Suite", "url": "https://portswigger.net/burp" },
+      { "name": "OWASP ZAP", "url": "https://www.zaproxy.org/" },
+      { "name": "DVWA", "url": "https://github.com/digininja/DVWA" }
+    ],
+    "expectedResult": "Уверенное владение инструментами тестирования безопасности. Проведено полное тестирование безопасности приложения. Создан профессиональный отчет.",
+    "estimatedTime": "24 часа"
+  },
+  {
+    "taskId": "PERF-01",
+    "taskGoal": "Изучить основы тестирования производительности",
+    "develops": [
+      {
+        "skillName": "Тестирование производительности",
+        "fromLevel": 1,
+        "toLevel": 2
+      }
+    ],
+    "subTasks": [
+      {
+        "title": "Теоретическая подготовка",
+        "description": "Изучить виды тестирования производительности: нагрузочное, стрессовое, объемное, тестирование стабильности."
+      },
+      {
+        "title": "Знакомство с инструментами",
+        "description": "Освоить базовые функции JMeter или LoadRunner. Создать простые тестовые сценарии."
+      },
+      {
+        "title": "Анализ результатов",
+        "description": "Научиться интерпретировать графики и метрики производительности. Понять основные показатели."
+      }
+    ],
+    "artifacts": [
+      { "name": "Apache JMeter", "url": "https://jmeter.apache.org/" },
+      { "name": "LoadRunner Community", "url": "https://www.microfocus.com/en-us/products/loadrunner-community/overview" },
+      { "name": "Performance Testing Guide", "url": "https://www.guru99.com/performance-testing.html" }
+    ],
+    "expectedResult": "Понимание основных принципов тестирования производительности. Умение создавать простые тесты в JMeter. Навык анализа базовых метрик.",
+    "estimatedTime": "12 часов"
+  },
+  {
+    "taskId": "PERF-02",
+    "taskGoal": "Освоить продвинутые техники тестирования производительности",
+    "develops": [
+      {
+        "skillName": "Тестирование производительности",
+        "fromLevel": 2,
+        "toLevel": 3
+      }
+    ],
+    "subTasks": [
+      {
+        "title": "Создание сложных сценариев",
+        "description": "Разработать комплексные тестовые сценарии с различными профилями нагрузки и пользовательскими путями."
+      },
+      {
+        "title": "Мониторинг системы",
+        "description": "Настроить мониторинг серверных ресурсов во время тестирования. Анализировать узкие места системы."
+      },
+      {
+        "title": "Оптимизация и рекомендации",
+        "description": "На основе результатов тестирования предложить конкретные рекомендации по улучшению производительности."
+      }
+    ],
+    "artifacts": [
+      { "name": "JMeter Advanced Guide", "url": "https://jmeter.apache.org/usermanual/index.html" },
+      { "name": "Performance Monitoring Tools", "url": "https://www.appdynamics.com/" },
+      { "name": "System Performance Tuning", "url": "https://www.brendangregg.com/systems-performance-2nd-edition-book.html" }
+    ],
+    "expectedResult": "Способность проводить комплексное тестирование производительности. Умение анализировать системные метрики. Навык подготовки рекомендаций по оптимизации.",
+    "estimatedTime": "20 часов"
+  },
+  {
+    "taskId": "FUNC-01",
+    "taskGoal": "Углубить знания функционального тестирования",
+    "develops": [
+      {
+        "skillName": "Функциональное тестирование",
+        "fromLevel": 1,
+        "toLevel": 2
+      }
+    ],
+    "subTasks": [
+      {
+        "title": "Изучение техник тест-дизайна",
+        "description": "Освоить техники классов эквивалентности, граничных значений, таблиц принятия решений."
+      },
+      {
+        "title": "Практическое применение",
+        "description": "Применить изученные техники для создания тест-кейсов для реального или учебного проекта."
+      },
+      {
+        "title": "Автоматизация простых тестов",
+        "description": "Создать автоматизированные тесты для основных функциональных сценариев."
+      }
+    ],
+    "artifacts": [
+      { "name": "ISTQB Syllabus", "url": "https://www.istqb.org/certifications/foundation-level" },
+      { "name": "Test Design Techniques", "url": "https://www.guru99.com/software-testing-techniques.html" },
+      { "name": "Selenium Documentation", "url": "https://selenium-python.readthedocs.io/" }
+    ],
+    "expectedResult": "Уверенное применение техник тест-дизайна. Создание качественных тест-кейсов. Базовые навыки автоматизации функциональных тестов.",
+    "estimatedTime": "18 часов"
+  },
+  {
+    "taskId": "MOB-01",
+    "taskGoal": "Освоить особенности мобильного тестирования",
+    "develops": [
+      {
+        "skillName": "Особенности мобильного тестирования",
+        "fromLevel": 1,
+        "toLevel": 2
+      }
+    ],
+    "subTasks": [
+      {
+        "title": "Изучение платформ",
+        "description": "Изучить особенности iOS и Android платформ, различия в поведении приложений."
+      },
+      {
+        "title": "Тестирование прерываний",
+        "description": "Освоить методы тестирования прерываний: звонки, SMS, уведомления, переключение приложений."
+      },
+      {
+        "title": "Работа с эмуляторами",
+        "description": "Настроить и использовать эмуляторы и симуляторы для тестирования на различных устройствах."
+      }
+    ],
+    "artifacts": [
+      { "name": "Android Testing Guide", "url": "https://developer.android.com/training/testing" },
+      { "name": "iOS Testing Guide", "url": "https://developer.apple.com/documentation/xctest" },
+      { "name": "Mobile Testing Best Practices", "url": "https://www.browserstack.com/guide/mobile-testing" }
+    ],
+    "expectedResult": "Понимание специфики мобильного тестирования. Умение тестировать прерывания и жизненный цикл приложения. Навыки работы с эмуляторами.",
+    "estimatedTime": "14 часов"
+  },
+  {
+    "taskId": "AUTO-01",
+    "taskGoal": "Изучить основы автоматизации тестирования",
+    "develops": [
+      {
+        "skillName": "Типы автоматизированного тестирования",
+        "fromLevel": 1,
+        "toLevel": 2
+      }
+    ],
+    "subTasks": [
+      {
+        "title": "Теория автоматизации",
+        "description": "Изучить пирамиду тестирования, виды автоматизированных тестов, критерии выбора тестов для автоматизации."
+      },
+      {
+        "title": "Выбор инструментов",
+        "description": "Сравнить различные инструменты автоматизации, выбрать подходящий для конкретного проекта."
+      },
+      {
+        "title": "Создание первых тестов",
+        "description": "Написать простые автоматизированные тесты для веб-приложения или API."
+      }
+    ],
+    "artifacts": [
+      { "name": "Test Automation Pyramid", "url": "https://martinfowler.com/articles/practical-test-pyramid.html" },
+      { "name": "Selenium WebDriver", "url": "https://www.selenium.dev/documentation/" },
+      { "name": "Postman for API Testing", "url": "https://learning.postman.com/docs/writing-scripts/test-scripts/" }
+    ],
+    "expectedResult": "Понимание принципов автоматизации тестирования. Умение выбирать инструменты. Создание базовых автоматизированных тестов.",
+    "estimatedTime": "16 часов"
+  },
+  {
+    "taskId": "AUTO-02",
+    "taskGoal": "Развить навыки автоматизации тестирования",
+    "develops": [
+      {
+        "skillName": "Типы автоматизированного тестирования",
+        "fromLevel": 2,
+        "toLevel": 3
+      }
+    ],
+    "subTasks": [
+      {
+        "title": "Продвинутые техники",
+        "description": "Освоить Page Object Model, Data-Driven Testing, параллельное выполнение тестов."
+      },
+      {
+        "title": "Интеграция с CI/CD",
+        "description": "Настроить запуск автоматизированных тестов в pipeline CI/CD."
+      },
+      {
+        "title": "Отчетность и аналитика",
+        "description": "Настроить генерацию отчетов о результатах тестирования, анализ метрик качества."
+      }
+    ],
+    "artifacts": [
+      { "name": "Page Object Model", "url": "https://selenium-python.readthedocs.io/page-objects.html" },
+      { "name": "Jenkins for Testing", "url": "https://www.jenkins.io/doc/book/using/using-jenkins-to-build-a-java-maven-project/" },
+      { "name": "Allure Reports", "url": "https://docs.qameta.io/allure/" }
+    ],
+    "expectedResult": "Применение продвинутых паттернов автоматизации. Интеграция тестов в процесс разработки. Настройка качественной отчетности.",
+    "estimatedTime": "22 часа"
+  },
+  {
+    "taskId": "DESIGN-01",
+    "taskGoal": "Освоить техники тест-дизайна",
+    "develops": [
+      {
+        "skillName": "Техники тест-дизайна",
+        "fromLevel": 1,
+        "toLevel": 2
+      }
+    ],
+    "subTasks": [
+      {
+        "title": "Изучение базовых техник",
+        "description": "Освоить классы эквивалентности, граничные значения, pairwise testing, переходы и состояния."
+      },
+      {
+        "title": "Практическое применение",
+        "description": "Применить каждую технику на практических примерах, создать наборы тест-кейсов."
+      },
+      {
+        "title": "Комбинирование техник",
+        "description": "Научиться комбинировать различные техники для максимального покрытия при минимальном количестве тестов."
+      }
+    ],
+    "artifacts": [
+      { "name": "ISTQB Test Design Techniques", "url": "https://www.istqb.org/certifications/foundation-level" },
+      { "name": "Pairwise Testing Tools", "url": "https://www.pairwise.org/" },
+      { "name": "State Transition Testing", "url": "https://www.guru99.com/state-transition-testing.html" }
+    ],
+    "expectedResult": "Уверенное применение основных техник тест-дизайна. Умение выбирать подходящие техники для разных ситуаций. Создание оптимальных наборов тестов.",
+    "estimatedTime": "15 часов"
+  },
+  {
+    "taskId": "REGR-01",
+    "taskGoal": "Освоить стратегии регрессионного тестирования",
+    "develops": [
+      {
+        "skillName": "Регрессионное тестирование",
+        "fromLevel": 1,
+        "toLevel": 2
+      }
+    ],
+    "subTasks": [
+      {
+        "title": "Изучение стратегий",
+        "description": "Изучить различные подходы к регрессионному тестированию: полное, выборочное, по приоритетам."
+      },
+      {
+        "title": "Анализ рисков",
+        "description": "Научиться анализировать изменения в коде и определять области для регрессионного тестирования."
+      },
+      {
+        "title": "Оптимизация набора тестов",
+        "description": "Создать стратегию поддержания и оптимизации регрессионного набора тестов."
+      }
+    ],
+    "artifacts": [
+      { "name": "Regression Testing Strategies", "url": "https://www.guru99.com/regression-testing.html" },
+      { "name": "Test Case Prioritization", "url": "https://www.softwaretestinghelp.com/test-case-prioritization/" },
+      { "name": "Risk-Based Testing", "url": "https://www.istqb.org/certifications/specialist" }
+    ],
+    "expectedResult": "Понимание различных стратегий регрессионного тестирования. Умение анализировать риски и приоритизировать тесты. Создание эффективной стратегии регрессии.",
+    "estimatedTime": "12 часов"
+  }
+] 

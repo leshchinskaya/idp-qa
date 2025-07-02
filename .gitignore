@@ -1,0 +1,40 @@
+# Системные файлы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Временные файлы
+*.tmp
+*.temp
+*.log
+
+# IDE файлы
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Файлы редакторов
+*~
+
+# Файлы операционной системы
+Icon?
+
+# Папки с кэшем
+node_modules/
+.cache/
+
+# Файлы развертывания
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Резервные копии
+*.bak
+*.backup 
