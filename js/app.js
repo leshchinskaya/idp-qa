@@ -517,7 +517,7 @@ function confirmSkillSelection() {
     updateGenerateButton();
     
     // Переключаемся на таб "Мой ИПР" при добавлении навыка
-    switchTab('idp');
+    // switchTab('idp');
 }
 
 // Закрытие модального окна
