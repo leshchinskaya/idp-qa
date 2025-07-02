@@ -1,0 +1,37 @@
+{
+  "taskId": "РС-02",
+  "taskGoal": "Изучить больше функций Charles для понимания возможностей работы с трафиком",
+  "develops": [
+    {
+      "skillName": "Работа с снифферами, Charles",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Ознакомиться со статьей про функции Charles...",
+      "description": "Ознакомиться со статьей про функции Charles <https://wiki.surfstudio.ru/pages/viewpage.action?pageId=14476727>"
+    },
+    {
+      "title": "Научиться пользоваться ограничением скорости в Charles",
+      "description": "Научиться пользоваться ограничением скорости в Charles"
+    },
+    {
+      "title": "Повторить работу с map local/remote",
+      "description": "Повторить работу с map local/remote. Использовать Map Local для подмены ответа сервера целиком на проекте для 3 фич (не для всех запросов)"
+    },
+    {
+      "title": "Попробовать сделать моки из запросов через mirror Создать моки на 3 фичи",
+      "description": "Попробовать сделать моки из запросов через mirror Создать моки на 3 фичи"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Практические примеры Работа с снифферами, Charles",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "",
+  "estimatedTime": "8 часов"
+}

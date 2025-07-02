@@ -1,6 +1,6 @@
 {
   "taskId": "J-02",
-  "taskGoal": "Развить навык 'Jira' до средний уровень",
+  "taskGoal": "Научиться рабоать с расширенным поиском в jira, применять в работе на проектах",
   "develops": [
     {
       "skillName": "Jira",
@@ -10,28 +10,20 @@
   ],
   "subTasks": [
     {
-      "title": "Углубленное изучение",
-      "description": "Изучить продвинутые аспекты навыка 'Jira', разобрать сложные случаи"
+      "title": "Выгрузить задачи в разных вариантах - прогоны в html, csv - прогоны с помощью...",
+      "description": "Выгрузить задачи в разных вариантах - прогоны в html, csv - прогоны с помощью Test Executions Report - прогоны с помощью Test Runs Report"
     },
     {
-      "title": "Практическое применение в проекте",
-      "description": "Применить навык 'Jira' в реальном проекте или сложном сценарии"
-    },
-    {
-      "title": "Анализ и оптимизация",
-      "description": "Проанализировать эффективность применения навыка и предложить улучшения"
+      "title": "Почитать про расширенные фильтры в jira...",
+      "description": "Почитать про расширенные фильтры в jira <https://support.atlassian.com/jira-service-management-cloud/docs/use-advanced-search-with-jira-query-language-jql/> <https://habr.com/ru/company/raiffeisenbank/blog/449932/> <https://docs.getxray.app/display/XRAY/Enhanced+querying+with+JQL>"
     }
   ],
   "artifacts": [
-    {
-      "name": "Документация по Jira",
-      "url": "#"
-    },
     {
       "name": "Практические примеры Jira",
       "url": "#"
     }
   ],
-  "expectedResult": "Освоение навыка 'Jira' на средний уровень",
-  "estimatedTime": "16 часов"
+  "expectedResult": "1. Наличие файлов с прогонами в формате html, csv, прикрепленных к ИПР 2. Наличие файлов csv с отчетами Test Executions Report/Test Runs Report 3. С помощью расширенных фильтров - проверено отсутствие прогонов без указания параметра Test activity на проекте",
+  "estimatedTime": "8 часов"
 }

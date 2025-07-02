@@ -240,8 +240,13 @@ function initializeEventListeners() {
     searchInput.addEventListener('input', handleSearch);
     clearSearch.addEventListener('click', () => {
         searchInput.value = '';
+        document.getElementById('showSelectedOnly').checked = false;
         renderSkillsGroups();
     });
+    
+    // Фильтр выбранных навыков
+    const showSelectedOnlyCheckbox = document.getElementById('showSelectedOnly');
+    showSelectedOnlyCheckbox.addEventListener('change', handleFilterChange);
     
     // Загрузка файла
     const uploadFile = document.getElementById('uploadFile');
@@ -311,16 +316,53 @@ function switchTab(targetTab) {
 // Поиск навыков
 function handleSearch(event) {
     const query = event.target.value.trim();
+    const showSelectedOnly = document.getElementById('showSelectedOnly').checked;
     
-    if (!query) {
+    if (!query && !showSelectedOnly) {
         renderSkillsGroups();
         return;
     }
     
-    const results = fuse.search(query);
-    const filteredSkills = results.map(result => result.item);
+    let filteredSkills = [];
+    
+    if (query) {
+        const results = fuse.search(query);
+        filteredSkills = results.map(result => result.item);
+    } else {
+        // Если нет поискового запроса, берем все навыки
+        filteredSkills = skillsData.flatMap(group => group.skills);
+    }
+    
+    // Применяем фильтр выбранных навыков
+    if (showSelectedOnly) {
+        filteredSkills = filteredSkills.filter(skill => 
+            selectedSkills.some(s => s.name === skill.name)
+        );
+    }
     
     renderSearchResults(filteredSkills);
+}
+
+// Обработка изменения фильтра
+function handleFilterChange() {
+    const searchInput = document.getElementById('searchInput');
+    const query = searchInput.value.trim();
+    
+    if (query) {
+        // Если есть поисковый запрос, перезапускаем поиск с учетом фильтра
+        handleSearch({ target: { value: query } });
+    } else {
+        // Если нет поискового запроса, показываем либо все навыки, либо только выбранные
+        const showSelectedOnly = document.getElementById('showSelectedOnly').checked;
+        
+        if (showSelectedOnly) {
+            const selectedSkillsData = skillsData.flatMap(group => group.skills)
+                .filter(skill => selectedSkills.some(s => s.name === skill.name));
+            renderSearchResults(selectedSkillsData);
+        } else {
+            renderSkillsGroups();
+        }
+    }
 }
 
 // Отображение результатов поиска
@@ -332,18 +374,25 @@ function renderSearchResults(skills) {
         return;
     }
     
-    const html = skills.map(skill => `
+    const html = skills.map(skill => {
+        const isSelected = selectedSkills.some(s => s.name === skill.name);
+        return `
         <div class="skill-group">
-            <div class="skill-item" onclick="openLevelModal('${skill.name.replace(/'/g, "\\'")}', '${skill.group.replace(/'/g, "\\'")}')">
+            <div class="skill-item ${isSelected ? 'selected' : ''}" onclick="handleSkillClick('${skill.name.replace(/'/g, "\\'")}', '${skill.group.replace(/'/g, "\\'")}')">
                 <div>
                     <div class="skill-name">${escapeHtml(skill.name)}</div>
                     <div class="skill-levels">${escapeHtml(skill.group)} • ${skill.levels.length} уровней</div>
                 </div>
+                ${isSelected ? `<div class="skill-actions">
+                    <button class="unselect-skill-btn" onclick="event.stopPropagation(); unselectSkill('${skill.name.replace(/'/g, "\\'")}', '${skill.group.replace(/'/g, "\\'")}');" title="Убрать навык из списка">✕</button>
+                </div>` : ''}
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
     
     container.innerHTML = html;
+    updateSkillsVisualState();
 }
 
 // Отображение групп навыков
@@ -358,19 +407,25 @@ function renderSkillsGroups() {
     
     const html = skillsData.map((group, index) => `
         <div class="skill-group">
-            <div class="group-header ${index === 0 ? 'expanded' : ''}" onclick="toggleGroup(${index})">
+            <div class="group-header" onclick="toggleGroup(${index})">
                 <span>${escapeHtml(group.group)}</span>
                 <span class="group-toggle">▼</span>
             </div>
-            <div class="group-skills ${index === 0 ? 'expanded' : ''}" id="group-${index}">
-                ${group.skills.map(skill => `
-                    <div class="skill-item" onclick="openLevelModal('${skill.name.replace(/'/g, "\\'")}', '${skill.group.replace(/'/g, "\\'")}')">
+            <div class="group-skills" id="group-${index}">
+                ${group.skills.map(skill => {
+                    const isSelected = selectedSkills.some(s => s.name === skill.name);
+                    return `
+                    <div class="skill-item ${isSelected ? 'selected' : ''}" onclick="handleSkillClick('${skill.name.replace(/'/g, "\\'")}', '${skill.group.replace(/'/g, "\\'")}')">
                         <div>
                             <div class="skill-name">${escapeHtml(skill.name)}</div>
                             <div class="skill-levels">${skill.levels.length} уровней</div>
                         </div>
+                        ${isSelected ? `<div class="skill-actions">
+                            <button class="unselect-skill-btn" onclick="event.stopPropagation(); unselectSkill('${skill.name.replace(/'/g, "\\'")}', '${skill.group.replace(/'/g, "\\'")}');" title="Убрать навык из списка">✕</button>
+                        </div>` : ''}
                     </div>
-                `).join('')}
+                `;
+                }).join('')}
             </div>
         </div>
     `).join('');
@@ -394,6 +449,32 @@ function toggleGroup(groupIndex) {
     }
 }
 
+// Обработка клика по навыку - всегда открывает модальное окно
+function handleSkillClick(skillName, groupName) {
+    openLevelModal(skillName, groupName);
+}
+
+// Развыбор навыка
+function unselectSkill(skillName, groupName) {
+    const existingSkillIndex = selectedSkills.findIndex(s => s.name === skillName);
+    
+    if (existingSkillIndex !== -1) {
+        selectedSkills.splice(existingSkillIndex, 1);
+        renderSelectedSkills();
+        updateGenerateButton();
+        
+        // Перерендериваем навыки для обновления визуального состояния
+        const isSearchActive = document.getElementById('searchInput').value.trim() !== '';
+        const isFilterActive = document.getElementById('showSelectedOnly').checked;
+        
+        if (isSearchActive || isFilterActive) {
+            handleSearch({ target: { value: document.getElementById('searchInput').value } });
+        } else {
+            renderSkillsGroups();
+        }
+    }
+}
+
 // Открытие модального окна выбора уровня
 function openLevelModal(skillName, groupName) {
     const skill = skillsData
@@ -404,8 +485,17 @@ function openLevelModal(skillName, groupName) {
     
     currentSkill = skill;
     
+    // Проверяем, есть ли уже выбранный навык
+    const existingSkill = selectedSkills.find(s => s.name === skillName);
+    
     document.getElementById('modalSkillName').textContent = skillName;
     document.getElementById('modalSkillGroup').textContent = groupName;
+    
+    // Проверяем, есть ли уже выбранный навык для обновления заголовка
+    const isEditing = selectedSkills.find(s => s.name === skillName);
+    document.getElementById('modalTitle').textContent = isEditing ? 
+        'Редактировать уровни навыка' : 
+        'Выберите текущий и целевой уровень';
     
     // Создаем опции для текущего уровня (включая 0 - "нет навыка")
     const currentLevelsContainer = document.getElementById('modalCurrentLevels');
@@ -433,6 +523,38 @@ function openLevelModal(skillName, groupName) {
     `).join('');
     
     targetLevelsContainer.innerHTML = targetLevelsHtml;
+    
+    // Если навык уже выбран, предзаполняем уровни
+    if (existingSkill) {
+        selectedCurrentLevel = existingSkill.currentLevel;
+        selectedTargetLevel = existingSkill.targetLevel;
+        
+        // Меняем текст кнопки для редактирования
+        document.getElementById('modalConfirm').textContent = 'Обновить';
+        
+        // Выделяем текущий уровень
+        setTimeout(() => {
+            const currentLevelElement = document.querySelector(`.current-level[data-level="${existingSkill.currentLevel}"]`);
+            if (currentLevelElement) {
+                currentLevelElement.classList.add('selected');
+            }
+            
+            // Выделяем целевой уровень
+            const targetLevelElement = document.querySelector(`.target-level[data-level="${existingSkill.targetLevel}"]`);
+            if (targetLevelElement) {
+                targetLevelElement.classList.add('selected');
+            }
+            
+            updateConfirmButton();
+        }, 10);
+    } else {
+        // Сбрасываем выбранные уровни для нового навыка
+        selectedCurrentLevel = null;
+        selectedTargetLevel = null;
+        
+        // Меняем текст кнопки для добавления
+        document.getElementById('modalConfirm').textContent = 'Добавить';
+    }
     
     document.getElementById('levelModal').classList.add('active');
     document.getElementById('modalOverlay').classList.add('active');
@@ -516,6 +638,14 @@ function confirmSkillSelection() {
     closeModal();
     updateGenerateButton();
     
+    // Перерендериваем навыки для обновления визуального состояния
+    const isSearchActive = document.getElementById('searchInput').value.trim() !== '';
+    if (isSearchActive) {
+        handleSearch({ target: { value: document.getElementById('searchInput').value } });
+    } else {
+        renderSkillsGroups();
+    }
+    
     // Переключаемся на таб "Мой ИПР" при добавлении навыка
     // switchTab('idp');
 }
@@ -525,6 +655,12 @@ function closeModal() {
     document.getElementById('levelModal').classList.remove('active');
     document.getElementById('modalOverlay').classList.remove('active');
     document.getElementById('modalConfirm').disabled = true;
+    
+    // Убираем выделение с уровней
+    document.querySelectorAll('.level-option').forEach(option => {
+        option.classList.remove('selected');
+    });
+    
     currentSkill = null;
     selectedCurrentLevel = null;
     selectedTargetLevel = null;
@@ -550,18 +686,31 @@ function renderSelectedSkills() {
                 <h4>${escapeHtml(skill.name)}</h4>
                 <p>${escapeHtml(skill.group)}</p>
             </div>
-            <button class="remove-skill" onclick="removeSkill(${index})">Удалить</button>
+            <div class="skill-actions-row">
+                <button class="edit-skill" onclick="openLevelModal('${skill.name.replace(/'/g, "\\'")}', '${skill.group.replace(/'/g, "\\'")}')">Редактировать</button>
+                <button class="remove-skill" onclick="removeSkill(${index})">Удалить</button>
+            </div>
         </div>
     `).join('');
     
     container.innerHTML = html;
 }
 
+
+
 // Удаление навыка
 function removeSkill(index) {
     selectedSkills.splice(index, 1);
     renderSelectedSkills();
     updateGenerateButton();
+    
+    // Перерендериваем навыки для обновления визуального состояния
+    const isSearchActive = document.getElementById('searchInput').value.trim() !== '';
+    if (isSearchActive) {
+        handleSearch({ target: { value: document.getElementById('searchInput').value } });
+    } else {
+        renderSkillsGroups();
+    }
 }
 
 // Очистка всех навыков
@@ -570,6 +719,16 @@ function clearAllSkills() {
     renderSelectedSkills();
     updateGenerateButton();
     document.getElementById('idpSection').style.display = 'none';
+    
+    // Перерендериваем навыки для обновления визуального состояния
+    const isSearchActive = document.getElementById('searchInput').value.trim() !== '';
+    const isFilterActive = document.getElementById('showSelectedOnly').checked;
+    
+    if (isSearchActive || isFilterActive) {
+        handleSearch({ target: { value: document.getElementById('searchInput').value } });
+    } else {
+        renderSkillsGroups();
+    }
 }
 
 // Обновление кнопки генерации
@@ -848,14 +1007,26 @@ function renderIDP(idp) {
                         </ul>
                     </div>
                     
-                    <div class="task-section">
-                        <h4>Полезные ресурсы</h4>
-                        <ul class="task-artifacts">
-                            ${task.artifacts.map(artifact => `
-                                <li><a href="${escapeHtml(artifact.url)}" target="_blank">${escapeHtml(artifact.name)}</a></li>
-                            `).join('')}
-                        </ul>
-                    </div>
+                    ${(() => {
+                        // Фильтруем артефакты, исключая ссылки с url: "#"
+                        const validArtifacts = task.artifacts.filter(artifact => artifact.url && artifact.url !== "#");
+                        
+                        // Если есть валидные артефакты, отображаем блок
+                        if (validArtifacts.length > 0) {
+                            return `
+                                <div class="task-section">
+                                    <h4>Полезные ресурсы</h4>
+                                    <ul class="task-artifacts">
+                                        ${validArtifacts.map(artifact => `
+                                            <li><a href="${escapeHtml(artifact.url)}" target="_blank">${escapeHtml(artifact.name)}</a></li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            `;
+                        }
+                        // Если нет валидных артефактов, не отображаем блок
+                        return '';
+                    })()}
                     
                     <div class="task-result">
                         <strong>Ожидаемый результат:</strong> ${escapeHtml(task.expectedResult)}
@@ -984,7 +1155,10 @@ function exportToCSV() {
         
         const subtasks = task.subTasks.map(st => `• ${st.title}: ${st.description}`).join('\n');
         
-        const artifacts = task.artifacts.map(artifact => `• ${artifact.name}: ${artifact.url}`).join('\n');
+        const artifacts = task.artifacts
+            .filter(artifact => artifact.url && artifact.url !== "#")
+            .map(artifact => `• ${artifact.name}: ${artifact.url}`)
+            .join('\n');
         
         csvData.push([
             task.taskId,
@@ -1047,4 +1221,18 @@ function showError(message) {
 function showSuccess(message) {
     console.log(message);
     alert(message); // Простая реализация, можно заменить на toast
-} 
+}
+
+// Функция для сворачивания/разворачивания блока выбранных навыков
+function toggleSelectedSkillsSection() {
+    const content = document.getElementById('selectedSkillsContent');
+    const toggle = document.getElementById('selectedSkillsToggle');
+    
+    if (content.classList.contains('collapsed')) {
+        content.classList.remove('collapsed');
+        toggle.textContent = '−';
+    } else {
+        content.classList.add('collapsed');
+        toggle.textContent = '+';
+    }
+}

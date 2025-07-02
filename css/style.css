@@ -148,6 +148,53 @@ body {
     margin-bottom: 0;
 }
 
+/* Сворачиваемые секции */
+.collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 20px;
+}
+
+.collapsible-header:hover {
+    opacity: 0.8;
+}
+
+.collapse-toggle {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.collapse-toggle:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+.collapsible-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 1000px;
+}
+
+.collapsible-content.collapsed {
+    max-height: 0;
+    margin-bottom: 0;
+}
+
 /* Секции */
 section {
     background: var(--surface-color);
@@ -307,6 +354,53 @@ section h2 {
     background: var(--background-color);
 }
 
+/* Фильтр навыков */
+.filter-container {
+    margin-bottom: 20px;
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    user-select: none;
+}
+
+.filter-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: var(--surface-color);
+}
+
+.filter-checkbox:hover .checkmark {
+    border-color: var(--primary-color);
+}
+
+.filter-checkbox input[type="checkbox"]:checked + .checkmark {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.filter-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
 /* Группы навыков */
 .skills-groups {
     display: grid;
@@ -362,14 +456,91 @@ section h2 {
     padding: 15px 20px;
     border-top: 1px solid var(--border-color);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: var(--surface-color);
+    border-radius: 0;
 }
 
 .skill-item:hover {
     background: rgba(59, 130, 246, 0.05);
+}
+
+.skill-item.selected {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-dark);
+    transform: translateX(2px);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.skill-item.selected::after {
+    content: '✓ Нажмите для редактирования';
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.skill-item.selected .skill-name {
+    color: white;
+    font-weight: 600;
+}
+
+.skill-item.selected .skill-levels {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.skill-item.selected:hover {
+    background: var(--primary-dark);
+    transform: translateX(3px);
+    box-shadow: var(--shadow-md);
+}
+
+.skill-item.selected:hover::after {
+    opacity: 1;
+}
+
+.skill-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.unselect-skill-btn {
+    background: rgba(239, 68, 68, 0.8);
+    border: 1px solid rgba(239, 68, 68, 1);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.unselect-skill-btn:hover {
+    background: rgba(239, 68, 68, 1);
+    border-color: rgba(220, 38, 38, 1);
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
 }
 
 .skill-name {
@@ -496,6 +667,28 @@ section h2 {
     font-size: 0.8rem;
 }
 
+.skill-actions-row {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.edit-skill {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.edit-skill:hover {
+    background: var(--primary-dark);
+}
+
 .remove-skill {
     background: var(--error-color);
     color: white;
@@ -505,8 +698,6 @@ section h2 {
     cursor: pointer;
     font-size: 0.9rem;
     transition: background-color 0.3s ease;
-    margin-left: auto;
-    flex-shrink: 0;
 }
 
 .remove-skill:hover {
@@ -835,26 +1026,32 @@ section h2 {
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    background: var(--surface-color);
 }
 
-.level-option:hover {
+.level-option:hover:not(.selected) {
     border-color: var(--primary-color);
     background: rgba(59, 130, 246, 0.05);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 .level-option.selected {
     border-color: var(--primary-color);
-    background: rgba(59, 130, 246, 0.1);
+    background: var(--primary-color);
+    color: white;
 }
 
 .level-option.current-level.selected {
     border-color: var(--success-color);
-    background: rgba(16, 185, 129, 0.1);
+    background: var(--success-color);
+    color: white;
 }
 
 .level-option.target-level.selected {
     border-color: var(--primary-color);
-    background: rgba(59, 130, 246, 0.1);
+    background: var(--primary-color);
+    color: white;
 }
 
 .level-number {
@@ -871,14 +1068,24 @@ section h2 {
     margin-bottom: 10px;
 }
 
+.level-option.selected .level-number {
+    background: white;
+    color: var(--primary-color);
+}
+
 .level-option.current-level.selected .level-number {
-    background: var(--success-color);
+    background: white;
+    color: var(--success-color);
 }
 
 .level-description {
     color: var(--text-primary);
     font-size: 0.9rem;
     line-height: 1.5;
+}
+
+.level-option.selected .level-description {
+    color: white;
 }
 
 .modal-footer {
@@ -937,6 +1144,16 @@ section h2 {
     .task-skills {
         justify-content: flex-start;
     }
+    
+    .filter-checkbox {
+        font-size: 0.9rem;
+    }
+    
+    .checkmark {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -977,9 +1194,16 @@ section h2 {
         align-self: center;
     }
     
-    .selected-skill .remove-skill {
+    .skill-actions-row {
         margin-left: 0;
         align-self: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .edit-skill, .remove-skill {
+        font-size: 0.8rem;
+        padding: 6px 10px;
     }
     
     .skill-details {
@@ -989,6 +1213,13 @@ section h2 {
     
     .task-card {
         padding: 20px;
+    }
+    
+    .skill-item.selected::after {
+        content: '✓ Редактировать';
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        right: 35px;
     }
 }
 

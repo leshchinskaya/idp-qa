@@ -1,0 +1,29 @@
+{
+  "taskId": "F-01",
+  "taskGoal": "Изучить больше возможностей, которые предоставляет firebase, понять принцип работы Remote Config",
+  "develops": [
+    {
+      "skillName": "Firebase",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Прочитать статью про Remote Config в Firebase...",
+      "description": "Прочитать статью про Remote Config в Firebase <https://firebase.google.com/docs/remote-config?hl=ru>"
+    },
+    {
+      "title": "Посмотреть интерфейс Remote Config в Firebase на примере приложений студии,...",
+      "description": "Посмотреть интерфейс Remote Config в Firebase на примере приложений студии, изучит принцип работы (Зенит)"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Практические примеры Firebase",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "",
+  "estimatedTime": "8 часов"
+}

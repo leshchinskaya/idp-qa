@@ -1,0 +1,25 @@
+{
+  "taskId": "РС-02",
+  "taskGoal": "1. Создана коллекция запросов в postman 2. Написаны скрипты в postman 5 штук для проверки схемы различных запросов и 5 штук для проверки сценариев",
+  "develops": [
+    {
+      "skillName": "Работа с API инструментами, Postman",
+      "fromLevel": 1,
+      "toLevel": 2
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Прочитать статьи по написанию скриптов в postman...",
+      "description": "Прочитать статьи по написанию скриптов в postman [https://learning.postman.com/docs/writing-scripts/intro-to-scripts/"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Практические примеры Работа с API инструментами, Postman",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/%7C) (все вложенные в раздел статьи) 2. Просмотреть видео с собрания отдела про api тесты  <https://drive.google.com/drive/folders/1YSK3UcACCldYZEQe4NFiw2_QFH1yk5_b> 3. Прочитать статьи про составление схемы  <https://json-schema.org/learn/getting-started-step-by-step>  <https://json-schema.org/learn/glossary> (просмотреть вложенные статьи) 4. Создать коллекцию запросов в postman для текущего проекта, добавить >=5 запросов 5. Написать api-тесты   - проверка схемы ответа для 5 запросов   - продумать сценарии для проверки запросов, написать тесты - 5 штук",
+  "estimatedTime": "8 часов"
+}

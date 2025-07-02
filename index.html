@@ -39,6 +39,14 @@
                             <button id="clearSearch" class="clear-btn">✕</button>
                         </div>
 
+                        <div class="filter-container">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" id="showSelectedOnly">
+                                <span class="checkmark"></span>
+                                Отобразить только выбранные навыки
+                            </label>
+                        </div>
+
                         <div class="skills-container">
                             <div class="skills-groups" id="skillsGroups">
                                 <!-- Группы навыков будут загружены динамически -->
@@ -75,9 +83,14 @@
                 <div class="tab-panel" id="idpTab">
                     <!-- Выбранные навыки -->
                     <section class="selected-skills-section">
-                        <h2>Выбранные навыки</h2>
-                        <div class="selected-skills" id="selectedSkills">
-                            <p class="empty-state">Навыки не выбраны</p>
+                        <div class="collapsible-header" onclick="toggleSelectedSkillsSection()">
+                            <h2>Выбранные навыки</h2>
+                            <button class="collapse-toggle" id="selectedSkillsToggle">−</button>
+                        </div>
+                        <div class="collapsible-content" id="selectedSkillsContent">
+                            <div class="selected-skills" id="selectedSkills">
+                                <p class="empty-state">Навыки не выбраны</p>
+                            </div>
                         </div>
                         <div class="actions">
                             <button id="generateIDP" class="btn btn-primary" disabled>Сгенерировать ИПР</button>
