@@ -25,11 +25,11 @@
   "artifacts": [
     {
       "name": "Документация по Использование AI для AQA",
-      "url": "#"
+      "url": "https://www.virtuosoqa.com/post/selenium-to-self-healing-tests-evolution"
     },
     {
       "name": "Практические примеры Использование AI для AQA",
-      "url": "#"
+      "url": "https://qawerk.com/blog/best-ai-testing-tools/"
     }
   ],
   "expectedResult": "Освоение навыка 'Использование AI для AQA' на экспертный уровень",

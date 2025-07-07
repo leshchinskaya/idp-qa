@@ -25,11 +25,11 @@
   "artifacts": [
     {
       "name": "Документация по Использование AI для AQA",
-      "url": "#"
+      "url": "https://www.askui.com/blog-posts/top-10-agentic-ai-tools-for-quality-assurance-automation-in-2025"
     },
     {
       "name": "Практические примеры Использование AI для AQA",
-      "url": "#"
+      "url": "https://digitaldefynd.com/IQ/ai-in-software-testing-case-studies/"
     }
   ],
   "expectedResult": "Освоение навыка 'Использование AI для AQA' на продвинутый уровень",

@@ -25,11 +25,11 @@
   "artifacts": [
     {
       "name": "Документация по Тестирование аналитики",
-      "url": "#"
+      "url": "https://www.analyticsmania.com/post/debugview-in-google-analytics-4/"
     },
     {
       "name": "Практические примеры Тестирование аналитики",
-      "url": "#"
+      "url": "https://docs.snowplow.io/docs/data-product-studio/data-quality/snowplow-micro/automated-testing/"
     }
   ],
   "expectedResult": "Освоение навыка 'Тестирование аналитики' на средний уровень",

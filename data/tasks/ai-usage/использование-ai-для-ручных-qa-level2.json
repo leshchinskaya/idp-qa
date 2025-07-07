@@ -25,11 +25,11 @@
   "artifacts": [
     {
       "name": "Документация по Использование AI для ручных QA",
-      "url": "#"
+      "url": "https://testsigma.com/blog/is-ai-really-important-in-software-test-automation/"
     },
     {
       "name": "Практические примеры Использование AI для ручных QA",
-      "url": "#"
+      "url": "https://testfort.com/cases/ai-enhanced-testing-for-creative-console-systems"
     }
   ],
   "expectedResult": "Освоение навыка 'Использование AI для ручных QA' на средний уровень",

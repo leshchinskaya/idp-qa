@@ -25,11 +25,11 @@
   "artifacts": [
     {
       "name": "Документация по Использование AI для ручных QA",
-      "url": "#"
+      "url": "https://www.lambdatest.com/blog/from-manual-to-ai-native-qa/"
     },
     {
       "name": "Практические примеры Использование AI для ручных QA",
-      "url": "#"
+      "url": "https://www.ishir.com/blog/142281/5-ways-ai-is-making-software-testing-smarter-and-faster-in-2025.htm"
     }
   ],
   "expectedResult": "Освоение навыка 'Использование AI для ручных QA' на экспертный уровень",

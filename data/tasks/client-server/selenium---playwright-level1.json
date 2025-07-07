@@ -1,0 +1,37 @@
+{
+  "taskId": "S/P-01",
+  "taskGoal": "Развить навык 'Selenium / Playwright' до базовый уровень",
+  "develops": [
+    {
+      "skillName": "Selenium / Playwright",
+      "fromLevel": 0,
+      "toLevel": 1
+    }
+  ],
+  "subTasks": [
+    {
+      "title": "Изучение теории: Selenium / Playwright",
+      "description": "Изучить теоретические основы навыка 'Selenium / Playwright', понять основные концепции и принципы"
+    },
+    {
+      "title": "Практическое применение",
+      "description": "Применить полученные знания на практике в простых сценариях"
+    },
+    {
+      "title": "Создание чек-листа",
+      "description": "Составить чек-лист основных моментов для навыка 'Selenium / Playwright'"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Документация по Selenium / Playwright",
+      "url": "#"
+    },
+    {
+      "name": "Практические примеры Selenium / Playwright",
+      "url": "#"
+    }
+  ],
+  "expectedResult": "Освоение навыка 'Selenium / Playwright' на базовый уровень",
+  "estimatedTime": "8 часов"
+}

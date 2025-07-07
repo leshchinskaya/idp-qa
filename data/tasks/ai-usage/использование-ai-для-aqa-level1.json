@@ -25,11 +25,11 @@
   "artifacts": [
     {
       "name": "Документация по Использование AI для AQA",
-      "url": "#"
+      "url": "https://www.testdevlab.com/blog/how-to-use-ai-to-automate-testing"
     },
     {
       "name": "Практические примеры Использование AI для AQA",
-      "url": "#"
+      "url": "https://digitaldefynd.com/IQ/ai-in-software-testing-case-studies/"
     }
   ],
   "expectedResult": "Освоение навыка 'Использование AI для AQA' на базовый уровень",
