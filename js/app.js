@@ -4,6 +4,8 @@ let tasksData = [];
 let selectedSkills = [];
 let currentSkill = null;
 let fuse = null;
+let currentIdpTasks = [];
+let selectedIdpTasks = [];
 
 // Инициализация приложения
 document.addEventListener('DOMContentLoaded', async function() {
@@ -716,6 +718,8 @@ function removeSkill(index) {
 // Очистка всех навыков
 function clearAllSkills() {
     selectedSkills = [];
+    currentIdpTasks = [];
+    selectedIdpTasks = [];
     renderSelectedSkills();
     updateGenerateButton();
     document.getElementById('idpSection').style.display = 'none';
@@ -882,7 +886,15 @@ function generateIDP() {
     if (selectedSkills.length === 0) return;
     
     const relevantTasks = findRelevantTasks();
+    currentIdpTasks = relevantTasks;
+    selectedIdpTasks = relevantTasks.map(task => task.taskId); // По умолчанию все задачи выбраны
+    
     const idp = createIDP(relevantTasks);
+    
+    if (relevantTasks.length === 0) {
+        showError('Не найдено подходящих задач для выбранных навыков. Попробуйте выбрать другие навыки или уровни.');
+        return;
+    }
     
     renderIDP(idp);
     document.getElementById('idpSection').style.display = 'block';
@@ -966,9 +978,101 @@ function calculateTotalTime(tasks) {
     return `${totalHours} часов`;
 }
 
+// Расчет времени для выбранных задач
+function calculateTotalTimeForSelectedTasks() {
+    const selectedTasks = currentIdpTasks.filter(task => selectedIdpTasks.includes(task.taskId));
+    return calculateTotalTime(selectedTasks);
+}
+
+// Переключение выбора задачи
+function toggleTaskSelection(taskId) {
+    const index = selectedIdpTasks.indexOf(taskId);
+    if (index > -1) {
+        selectedIdpTasks.splice(index, 1);
+    } else {
+        selectedIdpTasks.push(taskId);
+    }
+    
+    // Обновляем отображение
+    updateTaskSelectionDisplay();
+}
+
+// Выбрать все задачи
+function selectAllTasks() {
+    selectedIdpTasks = currentIdpTasks.map(task => task.taskId);
+    updateTaskSelectionDisplay();
+}
+
+// Снять выбор со всех задач
+function deselectAllTasks() {
+    selectedIdpTasks = [];
+    updateTaskSelectionDisplay();
+}
+
+// Обновление отображения выбора задач
+function updateTaskSelectionDisplay() {
+    // Обновляем чекбоксы
+    currentIdpTasks.forEach(task => {
+        const escapedTaskId = task.taskId.replace(/'/g, "\\'");
+        const checkbox = document.querySelector(`input[onchange="toggleTaskSelection('${escapedTaskId}')"]`);
+        const card = checkbox?.closest('.task-card');
+        
+        if (checkbox && card) {
+            const isSelected = selectedIdpTasks.includes(task.taskId);
+            checkbox.checked = isSelected;
+            
+            if (isSelected) {
+                card.classList.add('selected');
+                card.classList.remove('unselected');
+            } else {
+                card.classList.add('unselected');
+                card.classList.remove('selected');
+            }
+        }
+    });
+    
+    // Обновляем счетчики
+    const selectedTasksCount = selectedIdpTasks.length;
+    const totalTime = calculateTotalTimeForSelectedTasks();
+    
+    // Обновляем информацию в заголовке
+    const infoDiv = document.querySelector('.idp-goal div[style*="margin-top: 15px"]');
+    if (infoDiv) {
+        const totalTasks = currentIdpTasks.length;
+        const skillsCount = selectedSkills.length;
+        const createdDate = new Date().toLocaleDateString('ru-RU');
+        
+        infoDiv.innerHTML = `
+            <strong>Дата создания:</strong> ${createdDate} | 
+            <strong>Навыков:</strong> ${skillsCount} | 
+            <strong>Задач:</strong> ${selectedTasksCount} из ${totalTasks} | 
+            <strong>Общее время:</strong> ${totalTime}
+        `;
+    }
+    
+    // Показываем или скрываем предупреждение о том, что не выбрано ни одной задачи
+    const noTasksWarning = document.querySelector('.no-tasks-selected');
+    if (noTasksWarning) {
+        noTasksWarning.style.display = selectedTasksCount === 0 ? 'block' : 'none';
+    }
+    
+    // Обновляем текст кнопки экспорта
+    const exportButtonText = document.getElementById('exportButtonText');
+    if (exportButtonText) {
+        if (selectedTasksCount === 0) {
+            exportButtonText.textContent = 'Скачать CSV (выберите задачи)';
+        } else {
+            exportButtonText.textContent = `Скачать CSV (${selectedTasksCount} задач)`;
+        }
+    }
+}
+
 // Отображение ИПР
 function renderIDP(idp) {
     const container = document.getElementById('idpContent');
+    
+    const selectedTasksCount = selectedIdpTasks.length;
+    const totalTime = calculateTotalTimeForSelectedTasks();
     
     const html = `
         <div class="idp-goal">
@@ -977,21 +1081,49 @@ function renderIDP(idp) {
             <div style="margin-top: 15px; font-size: 0.9rem; color: var(--text-secondary);">
                 <strong>Дата создания:</strong> ${idp.createdDate} | 
                 <strong>Навыков:</strong> ${idp.skillsCount} | 
-                <strong>Задач:</strong> ${idp.tasksCount} | 
-                <strong>Общее время:</strong> ${idp.estimatedTotalTime}
+                <strong>Задач:</strong> ${selectedTasksCount} из ${idp.tasksCount} | 
+                <strong>Общее время:</strong> ${totalTime}
             </div>
         </div>
         
+        <div class="task-selection-controls">
+            <div class="task-selection-header">
+                <h3>Выберите задачи для ИПР</h3>
+                <div class="task-selection-actions">
+                    <button class="btn btn-secondary" onclick="selectAllTasks()">Выбрать все</button>
+                    <button class="btn btn-secondary" onclick="deselectAllTasks()">Снять все</button>
+                </div>
+            </div>
+            <p class="task-selection-description">Отметьте задачи, которые хотите включить в ваш план развития</p>
+        </div>
+        
         <div class="idp-tasks">
-            ${idp.tasks.map(task => `
-                <div class="task-card">
+            ${selectedTasksCount === 0 ? `
+                <div class="no-tasks-selected">
+                    <p>⚠️ Не выбрано ни одной задачи для ИПР</p>
+                    <p>Отметьте задачи, которые хотите включить в план развития</p>
+                </div>
+            ` : ''}
+            ${idp.tasks.map(task => {
+                const isSelected = selectedIdpTasks.includes(task.taskId);
+                return `
+                <div class="task-card ${isSelected ? 'selected' : 'unselected'}">
                     <div class="task-header">
-                        <div class="task-id">${escapeHtml(task.taskId)}</div>
-                        <div class="task-goal">${escapeHtml(task.taskGoal)}</div>
-                        <div class="task-skills">
-                            ${task.develops.map(dev => `
-                                <span class="task-skill">${escapeHtml(dev.skillName)} (${dev.fromLevel}→${dev.toLevel})</span>
-                            `).join('')}
+                        <div class="task-selection">
+                            <label class="task-checkbox">
+                                <input type="checkbox" ${isSelected ? 'checked' : ''} 
+                                       onchange="toggleTaskSelection('${task.taskId.replace(/'/g, "\\'")}')">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="task-info">
+                            <div class="task-id">${escapeHtml(task.taskId)}</div>
+                            <div class="task-goal">${escapeHtml(task.taskGoal)}</div>
+                            <div class="task-skills">
+                                ${task.develops.map(dev => `
+                                    <span class="task-skill">${escapeHtml(dev.skillName)} (${dev.fromLevel}→${dev.toLevel})</span>
+                                `).join('')}
+                            </div>
                         </div>
                     </div>
                     
@@ -1034,11 +1166,14 @@ function renderIDP(idp) {
                     
                     <div class="task-time">⏱ ${escapeHtml(task.estimatedTime)}</div>
                 </div>
-            `).join('')}
+            `}).join('')}
         </div>
     `;
     
     container.innerHTML = html;
+    
+    // Инициализируем отображение выбора задач
+    updateTaskSelectionDisplay();
 }
 
 // Экспорт в PDF
@@ -1103,8 +1238,15 @@ function exportToPDF() {
 
 // Экспорт в CSV
 function exportToCSV() {
-    const relevantTasks = findRelevantTasks();
-    const idp = createIDP(relevantTasks);
+    // Получаем только выбранные задачи
+    const selectedTasks = currentIdpTasks.filter(task => selectedIdpTasks.includes(task.taskId));
+    
+    if (selectedTasks.length === 0) {
+        showError('Выберите хотя бы одну задачу для экспорта.');
+        return;
+    }
+    
+    const idp = createIDP(selectedTasks);
     
     // Создаем структуру CSV с полной информацией из ИПР
     const csvData = [];
@@ -1116,8 +1258,8 @@ function exportToCSV() {
     // Общая информация
     csvData.push(['Дата создания', idp.createdDate]);
     csvData.push(['Количество навыков', idp.skillsCount]);
-    csvData.push(['Количество задач', idp.tasksCount]);
-    csvData.push(['Общее время', idp.estimatedTotalTime]);
+    csvData.push(['Количество выбранных задач', selectedTasks.length]);
+    csvData.push(['Общее время', calculateTotalTime(selectedTasks)]);
     csvData.push([]);
     
     // Общая цель
@@ -1150,7 +1292,7 @@ function exportToCSV() {
         'Время выполнения'
     ]);
     
-    relevantTasks.forEach(task => {
+    selectedTasks.forEach(task => {
         const skills = task.develops.map(dev => `${dev.skillName} (${dev.fromLevel}→${dev.toLevel})`).join('; ');
         
         const subtasks = task.subTasks.map(st => `• ${st.title}: ${st.description}`).join('\n');
@@ -1195,7 +1337,7 @@ function exportToCSV() {
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
         
-        showSuccess('План развития успешно экспортирован в CSV!');
+        showSuccess(`План развития с ${selectedTasks.length} выбранными задачами успешно экспортирован в CSV!`);
     } else {
         showError('Ваш браузер не поддерживает скачивание файлов.');
     }
